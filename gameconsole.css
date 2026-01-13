@@ -52,14 +52,32 @@ html, body {
 
 
 .button {
+    position: relative;
     border-style: solid;
     border-color: #fff;
     border-width: 8px;
     border-radius: 50%;
     color: #fff;
-    font-size: 30px;
     text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
 }
+.button:hover {
+    background-color: rgba(255,255,255, 0.2);
+}
+.button::before {
+    position: absolute;
+    display: inline-block;
+    font-size: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    left: calc(50% - 15px);
+    top: calc(50% - 15px);
+}
+.button-up::before {content: "▲"}
+.button-dn::before {content: "▼"}
+.button-lt::before {content: "◀"}
+.button-rt::before {content: "▶"}
 
 .button-cross {
     position: relative;
@@ -68,12 +86,12 @@ html, body {
 }
 .button-cross > .button {
     position: absolute;
-    width: 30%;
-    height: 30%;
+    width: 36%;
+    height: 36%;
 }
-.button-cross > .button-up {top: 5%; left: calc(50% - 48px)}
-.button-cross > .button-dn {bottom: 5%; left: calc(50% - 48px)}
-.button-cross > .button-lt {top: calc(50% - 48px); left: 5%}
-.button-cross > .button-rt {top: calc(50% - 48px); right: 5%}
+.button-cross > .button-up {top: 5%; left: 32%}
+.button-cross > .button-dn {bottom: 5%; left: 32%}
+.button-cross > .button-lt {top: 32%; left: 5%}
+.button-cross > .button-rt {top: 32%; right: 5%}
 
 
