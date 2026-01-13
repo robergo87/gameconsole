@@ -1,0 +1,79 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.gameconsole-wrap {
+    width: 100svw;
+    height: 100svh;
+    max-height: min(50svw, 500px);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.gameconsole {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+    overscroll-behavior: contain;
+}
+@media (orientation: portrait) {
+    .gameconsole-wrap {
+        max-height: unset;
+        max-width: 50svh;
+    }
+
+    .gameconsole {
+        flex-direction: column;
+    }
+    .gameconsole-screen {
+        transform: rotate(90deg);
+    }
+}
+
+.gameconsole-controls {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+.gameconsole-controls-1 {
+    background-color: #669;
+}
+.gameconsole-controls-2 {
+    background-color: #696;
+}
+
+.gameconsole-screen {
+    flex-grow: 0;
+    aspect-ratio: 1 / 1;
+    background-color: #666;
+}
+
+
+.button {
+    border-style: solid;
+    border-color: #fff;
+    border-width: 8px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+}
+
+.button-cross {
+    position: relative;
+    aspect-ratio: 1/1;
+    width: 100%;
+}
+.button-cross > .button {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+}
+.button-cross > .button-up {top: 5%; left: calc(50% - 48px)}
+.button-cross > .button-dn {bottom: 5%; left: calc(50% - 48px)}
+.button-cross > .button-lt {top: calc(50% - 48px); left: 5%}
+.button-cross > .button-rt {top: calc(50% - 48px); right: 5%}
+
+

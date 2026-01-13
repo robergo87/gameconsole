@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Page Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="./gameconsole.css">
+        <style>
+        </style>
+        <script>
+            async function lockLandscape() {
+              try {
+                if (screen.orientation && screen.orientation.lock)
+                  await screen.orientation.lock('landscape');
+              } catch (error) {
+                console.error("Failed to lock orientation:", error);
+              }
+            }
+             
+            document.addEventListener('DOMContentLoaded', lockLandscape);
+        </script>
+    </head>
+    <body>
+        <div class="gameconsole-wrap">
+            <div class="gameconsole">
+                <div class="gameconsole-controls gameconsole-controls-1">
+                    <div class="button-cross">
+                        <div class="button button-up">▲</div>
+                        <div class="button button-dn">▼</div>
+                        <div class="button button-lt">◀</div>
+                        <div class="button button-rt">▶</div>
+                    </div>
+                </div>
+                <div class="gameconsole-screen">Test</div>
+                <div class="gameconsole-controls gameconsole-controls-2">
+                    <div class="button-cross">
+                        <div class="button button-up">▲</div>
+                        <div class="button button-dn">▼</div>
+                        <div class="button button-lt">◀</div>
+                        <div class="button button-rt">▶</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
